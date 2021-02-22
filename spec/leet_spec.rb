@@ -1,8 +1,17 @@
 require('rspec')
-require('main.rb')
+require('leet')
 
 describe('String#leet_speak') do
-  it('returns a string as is when no leetspeak is applied') do
-  expect("happy".leet_speak).to(eq("happy"))
+  it('returns a string with all a\'s as 4\'s') do
+    expect("happy".leet_speak).to(eq('h4ppy'))
+  end
+  it("returns a string with all e's to 3's") do
+    expect("haaappyee".leet_speak).to(eq('h444ppy33'))
+  end
+  it("returns a string with I's to 1's") do
+    expect("I'm haaappyee".leet_speak).to(eq('1\'m h444ppy33'))
+  end
+  it("returns a string with all o's replaced with 0") do
+    expect('Oops'.leet_speak).to(eq('00ps'))
   end
 end
